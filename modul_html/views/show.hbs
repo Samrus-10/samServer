@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    
+    <h1 align ='center'>Список всех людей</h1>
+    <div class ='container'>
+
+        <table align = 'center' class = 'table'>
+
+            <thead>
+            <tr class="active">
+                <td>Имя</td>
+                <td>Возраст</td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each human}}
+        
+                <tr>  
+                    <td>{{this.name}}</td> <td>{{this.age}}</td> 
+                    <td>
+                        <a href="/delete?name={{this.name}}&age={{this.age}}" > Удалить </a>
+                    </td>
+                </tr> 
+
+                {{else}}
+                <tr> Empty </tr>
+                 {{/each}}   
+              
+            </tbody>
+         
+        </table>
+         
+    </div>
+
+    <div class="form-group" align= 'center' > 
+        <a href="/" class="btn btn-success"> На главную </a>
+    </div>
+
+</body>
+</html>
